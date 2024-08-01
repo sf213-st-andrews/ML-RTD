@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://c4ocx0wh3j38o"]
+
+[ext_resource type="Script" path="res://defenders/tower/Tower.gd" id="1_rqfy2"]
+[ext_resource type="Texture2D" uid="uid://bpqjbtxx3sixa" path="res://art/Tower.png" id="2_bnq7g"]
+[ext_resource type="PackedScene" uid="uid://8rgp2y87te5m" path="res://battlefield/Missile.tscn" id="2_num53"]
+[ext_resource type="Texture2D" uid="uid://bccf0ebm4s3n3" path="res://art/Ballista.png" id="2_oa0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4vl7"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm38i"]
+atlas = ExtResource("2_oa0x2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcfo6"]
+atlas = ExtResource("2_oa0x2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyigh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm38i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcfo6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aaytj"]
+radius = 157.013
+
+[node name="Tower" type="StaticBody2D"]
+z_index = 12
+collision_layer = 2
+script = ExtResource("1_rqfy2")
+missile_scene = ExtResource("2_num53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w4vl7")
+metadata/_edit_group_ = true
+
+[node name="TowerSprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_bnq7g")
+offset = Vector2(-0.5, 0)
+
+[node name="BallistaAniSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_vyigh")
+frame_progress = 0.720725
+offset = Vector2(0.5, -10)
+
+[node name="Range" type="Area2D" parent="."]
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_aaytj")
+
+[node name="Reload" type="Timer" parent="Range"]
+wait_time = 0.5
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
+[connection signal="timeout" from="Range/Reload" to="." method="_on_reload_timeout"]

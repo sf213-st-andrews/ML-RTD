@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="ML-Defense-2"
+run/main_scene="res://main/Main.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://icon.png"
+
+[dotnet]
+
+project/assembly_name="ML-Defense-1"
+
+[filesystem]
+
+import/blender/enabled=false
+
+[layer_names]
+
+2d_physics/layer_1="Knight_Hitbox"
+2d_navigation/layer_1="Knight_Collision"
+2d_physics/layer_2="Building_Hitbox"
+2d_navigation/layer_2="Wall_Collision"
+2d_physics/layer_3="Flag_Hitbox"
+2d_navigation/layer_3="Tower_Collision"
+2d_physics/layer_4="Missile_Hurtbox"
+2d_navigation/layer_4="Flag_Collision"
+2d_physics/layer_9="Tower_Range"
+2d_physics/layer_10="Knight_Range"
+2d_physics/layer_13="Grass_Tile"
+2d_navigation/layer_13="Grass_Tile"
+2d_physics/layer_14="Path_Tile"
+2d_navigation/layer_14="Path_Tile"
+2d_physics/layer_15="Building_Tile"
+2d_navigation/layer_15="Building_Tile"
+2d_physics/layer_16="Chasm_Tile"
+2d_navigation/layer_16="Chasm_Tile"

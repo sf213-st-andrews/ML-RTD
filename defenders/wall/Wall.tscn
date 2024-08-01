@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyge7o1o1fok8"]
+
+[ext_resource type="Script" path="res://defenders/wall/Wall.gd" id="1_qk05g"]
+[ext_resource type="Texture2D" uid="uid://wrrgt0t83n8l" path="res://art/Game_Walls.png" id="2_qg6ve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vtty"]
+size = Vector2(32, 32)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ma353"]
+vertices = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)])
+
+[node name="Wall" type="StaticBody2D"]
+z_index = 12
+collision_layer = 2
+script = ExtResource("1_qk05g")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3vtty")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_qg6ve")
+vframes = 12
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_ma353")
+navigation_layers = 2
+enter_cost = 1.0
+travel_cost = 5.0

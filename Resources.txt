@@ -1,0 +1,12 @@
+
+Signals
+https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html#connecting-a-signal-via-code
+https://www.youtube.com/results?search_query=godot+instansiated+scene+connect+signal+with+parameters
+https://www.youtube.com/watch?v=NK_SYVO7lMA
+
+Public Questions
+https://stackoverflow.com/questions/76750637/why-is-a-c-sharp-function-not-being-created-when-connecting-a-signal
+https://ask.godotengine.org/147565/simple-cutting-custom-shapes-navigation-polygon-pathfinding?show=147565#q147565
+
+YouTube TD Walkthough
+https://www.youtube.com/watch?v=y7c_FudN-Y0&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=10

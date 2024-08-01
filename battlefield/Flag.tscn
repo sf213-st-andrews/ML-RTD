@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://iov77mh47b3o"]
+
+[ext_resource type="Script" path="res://battlefield/Flag.gd" id="1_2i7ve"]
+[ext_resource type="Texture2D" uid="uid://c0jfktri8xuao" path="res://art/demo-flag.png" id="1_e3cuy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6mcn"]
+size = Vector2(17, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7r8t"]
+atlas = ExtResource("1_e3cuy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c1sh"]
+atlas = ExtResource("1_e3cuy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3okwm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7r8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5c1sh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Flag" type="Node2D"]
+z_index = 14
+script = ExtResource("1_2i7ve")
+
+[node name="Hitbox" type="Area2D" parent="."]
+z_index = 15
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_c6mcn")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hitbox"]
+texture_filter = 1
+position = Vector2(-6, 0)
+sprite_frames = SubResource("SpriteFrames_3okwm")
+frame_progress = 0.162164
