@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "BhTmazVpD+hCW8knCOBU77gT9UNQ/kjyIGCci3Y8pn2+lNG6RZlKdH1s/PDzHZUyXF+X34me0tf+qVe3Yi7Feg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\samfi\\ML-RTD\\ML-RTD\\ML-Defense-1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\samfi\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder\\godot.sourcegenerators\\4.0.3\\godot.sourcegenerators.4.0.3.nupkg.sha512",
+    "C:\\Users\\samfi\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder\\godotsharp\\4.0.3\\godotsharp.4.0.3.nupkg.sha512",
+    "C:\\Users\\samfi\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder\\godotsharpeditor\\4.0.3\\godotsharpeditor.4.0.3.nupkg.sha512",
+    "C:\\Users\\samfi\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.18\\microsoft.netcore.app.ref.6.0.18.nupkg.sha512",
+    "C:\\Users\\samfi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.18\\microsoft.windowsdesktop.app.ref.6.0.18.nupkg.sha512",
+    "C:\\Users\\samfi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.18\\microsoft.aspnetcore.app.ref.6.0.18.nupkg.sha512"
+  ],
+  "logs": []
+}
